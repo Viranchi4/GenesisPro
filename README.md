@@ -1,3 +1,1 @@
-# SmartWatch
-Product Development Lifecycle
-Product idea: Smart Watch
+Genesis Pro Training Activities
