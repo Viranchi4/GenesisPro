@@ -1,0 +1,8 @@
+package com.problem3;
+
+public class TestMatch extends Match {
+
+	float calculateRunRate() {
+		return (target - currentscore)/(90-currentover);
+	}
+}
