@@ -1,0 +1,27 @@
+package com.problem1;
+
+public class FourWheeler extends Vehicle {
+
+	private String audioSystem;
+	private String numberOfDoors;
+	public String getAudioSystem() {
+		return audioSystem;
+	}
+	public void setAudioSystem(String audioSystem) {
+		this.audioSystem = audioSystem;
+	}
+	public String getNumberOfDoors() {
+		return numberOfDoors;
+	}
+	public void setNumberOfDoors(String numberOfDoors) {
+		this.numberOfDoors = numberOfDoors;
+	}
+	public FourWheeler(String make, String vehicleNumber, String fuelType, int fuelCapacity, int cc, String audioSystem,
+			String numberOfDoors) {
+		super(make, vehicleNumber, fuelType, fuelCapacity, cc);
+		this.audioSystem = audioSystem;
+		this.numberOfDoors = numberOfDoors;
+	}
+	
+	
+}
