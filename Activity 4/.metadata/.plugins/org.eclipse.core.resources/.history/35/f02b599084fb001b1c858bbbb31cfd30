@@ -1,0 +1,30 @@
+package com.problem3;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class ProblemMain {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		BufferedReader reader = new BufferedReader( new InputStreamReader(System.in));
+		/*System.out.println("Enter the total runs scored");
+		int runs = input.nextInt();
+		System.out.println("Enter the total overs faced");
+		int overs = input.nextInt();
+		int runrate;*/
+		try {
+			System.out.println("Enter the total runs scored");
+			int runs = input.nextInt();
+			System.out.println("Enter the total overs faced");
+			int overs = input.nextInt();
+			int runrate;
+			runrate = runs/overs;
+			System.out.println("Current Run Rate: "+runrate);
+		}
+		catch(Exception e) {
+			System.out.println(e.getClass().getCanonicalName());
+		}
+	}
+}
