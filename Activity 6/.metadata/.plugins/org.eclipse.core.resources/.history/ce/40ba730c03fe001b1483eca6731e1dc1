@@ -1,14 +1,14 @@
 package com.problem3;
 
+import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class DisplayTeamMain {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		TreeMap<String, Team> map = new TreeMap<String, Team>();
+		HashMap<String, Team> map = new HashMap<String, Team>();
 		int n = input.nextInt();
 		input.nextLine();
 		for(int i=0;i<n;i++) {
@@ -26,6 +26,7 @@ public class DisplayTeamMain {
 				map.put(team_name, team);
 			}
 		}
+		System.out.println(map.entrySet());
 		System.out.println("Team and Players in ascending order");
 		for(Entry<String, Team> entry:map.entrySet()) {
 			System.out.println(entry.getKey());

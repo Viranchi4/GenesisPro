@@ -1,0 +1,10 @@
+package com.problem3;
+
+import java.util.Scanner;
+
+public class DisplayTeamMain {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+	}
+}
