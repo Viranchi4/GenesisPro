@@ -1,13 +1,12 @@
 package com.problem3;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Team {
 
 	private String name;
-	private List<Player> playerList = new ArrayList<Player>();
+	private List<Player> playerList;
 	
 	public String getName() {
 		return name;
