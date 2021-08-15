@@ -1,0 +1,11 @@
+package com.problem2;
+
+import java.util.Scanner;
+
+public class ProblemMain {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+	}
+}
