@@ -1,0 +1,104 @@
+package com.problem3;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class DisplayTeamMain {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		//TreeMap<String, Team> map = new TreeMap<String, Team>();
+		int n = input.nextInt();
+		input.nextLine();
+		/*for(int i=0;i<n;i++) {
+			String str = input.nextLine();
+			String[] arr = str.split("\\|");
+			String team_name = arr[0];
+			String player_name = arr[1];
+			if(map.containsKey(team_name)) {
+				Team team = map.get(team_name);
+				team.addPlayer(player_name);
+			}
+			else {
+				Team team = new Team(team_name);
+				team.addPlayer(player_name);
+				map.put(team_name, team);
+			}
+		}
+		System.out.println("Team and Players in ascending order");
+		for(Entry<String, Team> entry:map.entrySet()) {
+			System.out.println(entry.getKey());
+			for(Player playerName:entry.getValue().getPlayerList()) {
+				System.out.println("--"+playerName.getName());
+			}
+		}*/
+		
+		//String[] team_name = new String[n];
+		//String[] player_name = new String[n];
+		List<Team> team = new ArrayList<Team>();
+		for(int i=0;i<n;i++) {
+			String str = input.nextLine();
+			String[] arr = str.split("\\|");
+			String team_name = arr[0];
+			String player_name = arr[1];
+			Team obj = new Team(team_name);
+			if(team.isEmpty()) {
+				obj.addPlayer(player_name);
+				team.add(obj);
+				System.out.println("When empty added!");
+			}
+			else {
+				for(Team t:team) {
+					if(t.getName().equals(team_name)) {
+						t.addPlayer(player_name);
+						int k = team.indexOf(t);
+						team.set(k, t);
+						System.out.println("Updated at index="+k);
+					}
+					else {
+						obj.addPlayer(player_name);
+						team.add(obj);
+						System.out.println("New Added");
+					}
+				}
+			}
+			
+			
+			
+			/*for(Team t:team) {
+				if(t.getName().equals(team_name)) {
+					t.addPlayer(player_name);
+					int k = team.indexOf(t);
+					team.set(k, t);
+					System.out.println("Updated at index="+k);
+				}
+				else {
+					Team obj = new Team(team_name);
+					obj.addPlayer(player_name);
+					team.add(obj);
+					System.out.println("New Added");
+				}
+			}
+			
+			*/
+			//Team obj = new Team(team_name);
+			//obj.addPlayer(player_name);
+			//team.add(obj);
+		}//input done
+		
+		for(Team t:team)
+		Collections.sort(team);
+		System.out.println(team);
+		for(Team t:team) {
+			System.out.println(t.getName()+"- ");
+			for(Player playerName:t.getPlayerList()) {
+				System.out.println("--"+playerName.getName());
+			}
+		}
+		
+	}
+}
