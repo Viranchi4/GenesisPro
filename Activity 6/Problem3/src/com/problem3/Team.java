@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Team {
+import javax.naming.NameAlreadyBoundException;
+
+public class Team implements Comparable<Team> {
 
 	private String name;
 	private List<Player> playerList = new ArrayList<Player>();
@@ -31,4 +33,10 @@ public class Team {
 	public void addPlayer(String playername) {
 		this.playerList.add(new Player(playername));
 	}
+	
+	public int compareTo(Team t) {
+		// TODO Auto-generated method stub
+		return this.name.compareTo(t.name);
+	}
+	
 }
